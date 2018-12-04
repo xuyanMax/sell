@@ -51,6 +51,5 @@ public class OrderMasterRepositoryTest {
         Page<OrderMaster> result = repository.findByBuyerOpenid(openid, request);
         System.out.println(result.getTotalElements());
 
-
     }
 }
