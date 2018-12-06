@@ -7,7 +7,7 @@ import com.imooc.VO.ResultVO;
  * @Date: 2018-11-29 22:58
  * @Version 1.0
  */
-public class ResultVoUtil {
+public class ResultVOUtil {
 
     public static ResultVO success(Object object) {
         ResultVO resultVO = new ResultVO();

@@ -1,9 +1,9 @@
 package com.imooc.service.impl;
 
 import com.imooc.dataobject.OrderDetail;
-import com.imooc.dataobject.OrderMaster;
 import com.imooc.dto.OrderDTO;
 import com.imooc.enums.OrderStatusEnum;
+import com.imooc.enums.PayStatusEnum;
 import com.imooc.repository.OrderDetailRepository;
 import com.imooc.repository.OrderMasterRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +42,7 @@ public class OrderServiceImplTest {
 
     private final String BUYER_OPENID = "1101110";
 
-    private final String ORDER_ID = "1497183332311989948";
+    private final String ORDER_ID = "1543882520356952685";
 
     @Test
     public void create() {
@@ -95,9 +95,15 @@ public class OrderServiceImplTest {
 
     @Test
     public void finish() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.finish(orderDTO);
+        Assert.assertEquals(OrderStatusEnum.FINISHED.getCode(), result.getOrderStatus());
     }
 
     @Test
     public void paid() {
+        OrderDTO orderDTO = orderService.findOne(ORDER_ID);
+        OrderDTO result = orderService.paid(orderDTO);
+        Assert.assertEquals(PayStatusEnum.SUCCESS.getCode(), result.getPayStatus());
     }
 }

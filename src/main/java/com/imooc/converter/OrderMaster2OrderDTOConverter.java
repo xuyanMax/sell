@@ -1,6 +1,5 @@
 package com.imooc.converter;
 
-import com.imooc.dataobject.OrderDetail;
 import com.imooc.dataobject.OrderMaster;
 import com.imooc.dto.OrderDTO;
 import org.springframework.beans.BeanUtils;
@@ -13,7 +12,7 @@ import java.util.stream.Collectors;
  * @Date: 2018-12-04 09:22
  * @Version 1.0
  */
-public class OrderMaster2OrderDTO {
+public class OrderMaster2OrderDTOConverter {
     public static OrderDTO converter(OrderMaster orderMaster) {
         OrderDTO orderDTO = new OrderDTO();
         BeanUtils.copyProperties(orderMaster, orderDTO);
@@ -21,6 +20,6 @@ public class OrderMaster2OrderDTO {
     }
 
     public static List<OrderDTO> converter(List<OrderMaster> orderMasterList) {
-        return orderMasterList.stream().map(OrderMaster2OrderDTO::converter).collect(Collectors.toList());
+        return orderMasterList.stream().map(OrderMaster2OrderDTOConverter::converter).collect(Collectors.toList());
     }
 }

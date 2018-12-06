@@ -3,10 +3,9 @@ package com.imooc.dataobject;
 import com.imooc.VO.ProductInfoVO;
 import com.imooc.VO.ProductVO;
 import com.imooc.VO.ResultVO;
-import com.imooc.enums.ProductStatusEnum;
 import com.imooc.service.CategoryService;
 import com.imooc.service.ProductService;
-import com.imooc.utils.ResultVoUtil;
+import com.imooc.utils.ResultVOUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,6 +69,6 @@ public class BuyerProductController {
             productVOList.add(productVO);
         }
 
-        return ResultVoUtil.success(productVOList);
+        return ResultVOUtil.success(productVOList);
     }
 }
